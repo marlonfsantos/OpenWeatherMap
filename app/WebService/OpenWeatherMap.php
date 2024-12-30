@@ -41,6 +41,20 @@ class OpenWeatherMap{
         ]);
     }
 
+    
+    /**
+     * Metodo responsavel por obter a previsão do tempo 
+     * @param string $cidade
+     * @param string $uf
+     * @return array 
+     */
+    
+     public function consultarPrevisaoTempo($cidade, $uf){
+        return $this->get('/data/2.5/forecast',[
+            'q' => $cidade.',BR-'.$uf.',BRA'
+        ]);
+    }
+
     /**
      * Método responsável por executar a consulta GET na API do OpenWeatherMap
      * @param string $resource
